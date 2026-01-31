@@ -1,8 +1,10 @@
-import React from 'react'
-
-
+'use client';
+import {useState} from "react"
 
 const Usernav = () => {
+const[isOpen, setIsOpen] = useState(true)  
+
+
   return (
     <div className ="p-2 reltive inline-block border-0 rounded-full">
 
@@ -19,6 +21,13 @@ const Usernav = () => {
 
         </button>
     
+    {isOpen && (
+    <div className="w-[220px] absolute top-[60px] right-0 bg-white border rounded-xl shadow-md flex flex-col cursor-pointer">
+
+      <p>yeyetre</p>
+      <p>yeyetre</p>
+      </div>
+    )}
     </div>
   )
 }
