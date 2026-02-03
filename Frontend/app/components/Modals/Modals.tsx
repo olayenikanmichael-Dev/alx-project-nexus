@@ -9,7 +9,7 @@ interface ModalProps {
     isOpen: boolean;
 }
 
-const ModalPage: React.FC<ModalProps> = ({
+const Modal: React.FC<ModalProps> = ({
     label,
     content,
     isOpen,
@@ -62,4 +62,4 @@ const ModalPage: React.FC<ModalProps> = ({
     )
 }
 
-export default ModalPage;
+export default Modal;
