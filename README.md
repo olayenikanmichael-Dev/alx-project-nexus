@@ -1,6 +1,6 @@
 
 # 🏡 Habita — ALX Project Nexus  
-*A Full-Stack Property Listing Platform (Airbnb Clone)*
+*A Full-Stack Property Listing Platform *
 
 Habita is a modern **full-stack property listing web application** built as part of the **ALX Project Nexus**. Inspired by Airbnb, Habita allows users to discover, list, and manage properties seamlessly. The name **Habita** means **“Home”**, reflecting the platform’s goal of helping people find places where they truly belong.
 
