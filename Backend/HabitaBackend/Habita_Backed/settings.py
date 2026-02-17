@@ -22,6 +22,7 @@ ALLOWED_HOSTS = os.environ.get('DAJANGO_ALLOWED_HOSTS').split(" ")
 
 AUTH_USER_MODEL = 'useraccounts.User'
 
+
 SITE_ID =1
 WEBSITE_URL ='http://localhost:8000'
 SIMPLE_JWT ={"ACCESS_TOKEN_LIFETIME":timedelta(minutes=60),
@@ -55,6 +56,9 @@ CORS_ALLOWED_ORIGINS =[
     'http://127.0.0.1:80000',
     'http://l27.0.0.1:3000',
 ]
+
+CROS_ALLOW_ALL_ORIGINS = True
+
 
 REST_AUTH = {
         "USE_JWT": True,
@@ -90,7 +94,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+   "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
