@@ -8,9 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "access-token": "^0.2.2",
     "next": "^16.1.6",
     "react": "19.2.3",
+    "react-date-range": "^2.0.1",
     "react-dom": "19.2.3",
+    "react-select": "^5.10.2",
+    "world-countries": "^5.1.0",
     "zustand": "^5.0.10"
   },
   "devDependencies": {

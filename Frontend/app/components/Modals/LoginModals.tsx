@@ -6,8 +6,8 @@ import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import useLoginModal from "@/app/Hooks/UseLoginModal";
 import CustomButton from "../forms/CustomButton";
-// import { handleLogin } from "@/app/lib/actions";
-// import apiService from "@/app/services/apiService";
+import { handleLogin } from "@/app/lib/actions";
+import apiService from "@/app/services/Api.Service";
 
 const LoginModal = () => {
     const router = useRouter()
@@ -16,29 +16,29 @@ const LoginModal = () => {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState<string[]>([]);
 
-    // const submitLogin = async () => {
-    //     const formData = {
-    //         email: email,
-    //         password: password
-    //     }
+    const submitLogin = async () => {
+        const formData = {
+            email: email,
+            password: password
+        }
 
-    //     const response = await apiService.postWithoutToken('/api/auth/login/', JSON.stringify(formData))
+        const response = await apiService.postWithoutToken('/api/auth/login/', JSON.stringify(formData))
 
-    //     if (response.access) {
-    //         handleLogin(response.user.pk, response.access, response.refresh);
+        if (response.access) {
+            handleLogin(response.user.pk, response.access, response.refresh);
 
-    //         loginModal.close();
+            loginModal.Close();
 
-    //         router.push('/')
-    //     } else {
-    //         setErrors(response.non_field_errors);
-    //     }
-    // }
+            router.push('/')
+        } else {
+            setErrors(response.non_field_errors);
+        }
+    }
 
     const content = (
         <>
             <form 
-                // action={submitLogin}
+                action={submitLogin}
                 className="space-y-4"
             >
                 <input onChange={(e) => setEmail(e.target.value)} placeholder="Your e-mail address" type="email" className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
@@ -58,7 +58,7 @@ const LoginModal = () => {
 
                 <CustomButton
                     label="Submit"
-                    // onClick=()
+                    onClick={submitLogin}
                 />
             </form>
         </>
@@ -69,8 +69,7 @@ const LoginModal = () => {
             isOpen={loginModal.isOpen}
             close={loginModal.Close}
             label="Log in"
-             content={content}
-            
+            content={content}
         />
     )
 }

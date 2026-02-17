@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import MenuLink from "./MenuLink";
-// import LogoutButton from "../LogoutButton";
+import LogoutButton from "../LogoutButton";
 
 import useLoginModal from "@/app/Hooks/UseLoginModal";
 import useSignupModal from "@/app/Hooks/UseSignupModal";
@@ -74,7 +74,7 @@ const UserNav: React.FC<UserNavProps> = ({
                                 }}
                             />
 
-                            {/* <LogoutButton /> */}
+                            <LogoutButton />
                         </>
                     ) : (
                         <>
