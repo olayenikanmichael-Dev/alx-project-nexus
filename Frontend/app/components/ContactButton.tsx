@@ -24,12 +24,14 @@ const ContactButton: React.FC<ContactButtonProps> = ({
                 router.push(`/inbox/${conversation.conversation_id}`)
             }
         } else {
-            loginModal.open();
+            loginModal.Open();
         }
     }
 
     return (
-        <div 
+    
+    
+   <div 
             onClick={startConversation}
             className="mt-6 py-4 px-6 cursor-pointer bg-airbnb text-white rounded-xl hover:bg-airbnb-dark transition"
         >

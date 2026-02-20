@@ -1,6 +1,5 @@
 import { getUserId } from "../lib/actions";
 import apiService from "../services/Api.Service";
-import React, { useState, useEffect } from 'react';
 import Conversation from "../components/Inbox/coversation/coversation";
 
 export type UserType = {

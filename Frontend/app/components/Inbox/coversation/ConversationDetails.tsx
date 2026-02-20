@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState, useRef } from "react";
-import CustomButton from "../forms/CustomButton";
-import { ConversationType } from "@/app/inbox/page";
+import CustomButton from "@/app/components/forms/CustomButton";
+import { ConversationType } from "@/app/Inbox/page";
 import useWebSocket, {ReadyState} from "react-use-websocket";
-import { MessageType } from "@/app/inbox/[id]/page";
-import { UserType } from "@/app/inbox/page";
+import { MessageType } from "@/app/Inbox/[id]/page";
+import { UserType } from "@/app/Inbox/page";
 
 interface ConversationDetailProps {
     token: string;

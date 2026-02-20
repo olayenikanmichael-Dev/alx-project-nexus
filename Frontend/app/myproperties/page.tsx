@@ -1,21 +1,20 @@
-import Propertylist from "../components/Properties/Propertylist"
+import { getUserId } from "../lib/actions";
+import PropertyList from "../components/Properties/Propertylist";
 
-const mypropertypage = () => {
+const MyPropertiesPage = async () => {
+    const userId = await getUserId();           
 
-  return (
-   <main className="max-w-[1500px] mx-auto px-6 pb-6">
-<h1 className="grid grid-cols  md:grid-cols-3 gap-6">
+    return (
+        <main className="max-w-[1500px] mx-auto px-6 pb-6">
+            <h1 className="my-6 text-2xl">My properties</h1>
 
-</h1>
-<div>
-
-<Propertylist/>
-    
-    </div>
-
-   </main>
-
-  )
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <PropertyList 
+                    landlord_id={userId}
+                />
+            </div>
+        </main>
+    )
 }
 
-export default mypropertypage
+export default MyPropertiesPage;
